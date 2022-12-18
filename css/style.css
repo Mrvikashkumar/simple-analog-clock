@@ -62,7 +62,6 @@ body {
   position: absolute;
 }
 .hour-handle, .minute-handle, .second-handle{
-  --rotation-time: 60s;
   background-color: #000;
   border-radius: 5px 5px 0 0;
   position: absolute;
@@ -74,15 +73,49 @@ body {
 .hour-handle{
   width: 8px;
   height: 37%;
-  /* animation: rotate calc(var(--rotation-time) * 60 * 60) linear infinite; */
 }
 .minute-handle{
   width: 5px;
   height: 40%;
-  /* animation: rotate calc(var(--rotation-time) * 60) linear infinite; */
 }
 .second-handle{
   width: 2px;
   height: 43%;
-  /* animation: rotate calc(var(--rotation-time)) linear infinite; */
+}
+
+/* query selector */
+@media screen and (max-width: 500px) {
+  .clock {
+    width: 400px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .clock {
+    width: 300px;
+    height: 300px;
+  }
+  .clock-num > div > b{
+    display: none;
+  }
+  .clock-handles::before{
+    width: 15px;
+    height: 15px;
+  }
+  .hour-handle{
+    width: 8px;
+    height: 30%;
+  }
+  .minute-handle{
+    height: 35%;
+  }
+  .second-handle{
+    height: 38%;
+  }
+}
+@media screen and (max-width: 300px) {
+  .clock {
+    width: 250px;
+    height: 250px;
+  }
 }
